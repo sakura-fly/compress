@@ -13,7 +13,7 @@ public class Run {
         // new ZipFile("filename.zip").addFolder(new File("/home/sakura/workspace/compress/src/main/resources/cfloder"));
 
         try {
-            GCompressEnum.zip.getCompress().compressFolder("~workspace/compress/target/out/filename.zip", new File("/home/sakura/workspace/compress/src/main/resources/cfloder"));
+            GCompressEnum.zip.getInstance().compressFolder("~workspace/compress/target/out/filename.zip", new File("/home/sakura/workspace/compress/src/main/resources/cfloder"));
         } catch (ZipException e) {
             e.printStackTrace();
         }
@@ -23,7 +23,7 @@ public class Run {
         // new ZipFile("filename.zip").addFolder(new File("/home/sakura/workspace/compress/src/main/resources/cfloder"));
 
         try {
-            GCompressEnum.zip.getCompress().extract("/home/sakura/workspace/compress/target/out/filename.zip");
+            GCompressEnum.zip.getInstance().extract("/home/sakura/workspace/compress/target/out/filename.zip");
         } catch (ZipException e) {
             e.printStackTrace();
         }

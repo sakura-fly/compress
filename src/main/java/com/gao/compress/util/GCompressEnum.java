@@ -8,13 +8,13 @@ public enum GCompressEnum {
     zip(new GCompressZip());
 
 
-    private GCompress compress;
+    private GCompress instance;
 
-    GCompressEnum(GCompress compress) {
-        this.compress = compress;
+    GCompressEnum(GCompress instance) {
+        this.instance = instance;
     }
 
-    public GCompress getCompress() {
-        return compress;
+    public GCompress getInstance() {
+        return instance;
     }
 }

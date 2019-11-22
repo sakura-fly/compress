@@ -18,11 +18,21 @@ public class Run {
             e.printStackTrace();
         }
     }
+ @Test
+    public void unzip() {
+        // new ZipFile("filename.zip").addFolder(new File("/home/sakura/workspace/compress/src/main/resources/cfloder"));
+
+        try {
+            GCompressEnum.zip.getCompress().extract("/home/sakura/workspace/compress/target/out/filename.zip");
+        } catch (ZipException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     @Test
     public void zipSync() {
-        GCompressSyneEnum.zip.getCompressSync().compressFolder("~/workspace/compress/target/out/filename.zip", new File("/home/sakura/workspace/compress/src/main/resources/cfloder"), new CallBack() {
+        GCompressSyneEnum.zip.getCompressSync().compressFolder("/home/sakura/workspace/compress/target/out/filename.zip", new File("/home/sakura/workspace/compress/src/main/resources/cfloder"), new CallBack() {
             public void finish() {
                 System.out.println("finish");
             }

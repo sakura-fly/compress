@@ -15,11 +15,15 @@ public class GCompressSync {
         new Thread(new Runnable() {
             public void run() {
                 try {
-                    compress.compressFolder(out,folder);
-                    callBack.finish();
+                    compress.compressFolder(out, folder);
+                    if (callBack != null) {
+                        callBack.finish();
+
+                    }
                 } catch (ZipException e) {
-                    // e.printStackTrace();
-                    callBack.err();
+                    if (callBack != null) {
+                        callBack.err(e);
+                    }
                 }
             }
         }).start();

@@ -13,7 +13,7 @@ public class Run {
         // new ZipFile("filename.zip").addFolder(new File("/home/sakura/workspace/compress/src/main/resources/cfloder"));
 
         try {
-            GCompressEnum.zip.getCompress().compressFolder("/home/sakura/workspace/compress/target/out/filename.zip", new File("/home/sakura/workspace/compress/src/main/resources/cfloder"));
+            GCompressEnum.zip.getCompress().compressFolder("~workspace/compress/target/out/filename.zip", new File("/home/sakura/workspace/compress/src/main/resources/cfloder"));
         } catch (ZipException e) {
             e.printStackTrace();
         }
@@ -22,13 +22,13 @@ public class Run {
 
     @Test
     public void zipSync() {
-        GCompressSyneEnum.zip.getCompressSync().compressFolder("/home/sakura/workspace/compress/target/out/filename.zip", new File("/home/sakura/workspace/compress/src/main/resources/cfloder"), new CallBack() {
+        GCompressSyneEnum.zip.getCompressSync().compressFolder("~/workspace/compress/target/out/filename.zip", new File("/home/sakura/workspace/compress/src/main/resources/cfloder"), new CallBack() {
             public void finish() {
                 System.out.println("finish");
             }
 
-            public void err() {
-                System.out.println("err");
+            public void err(ZipException e) {
+                System.out.println("err" + e.getMessage());
 
             }
         });

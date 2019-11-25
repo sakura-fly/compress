@@ -8,13 +8,13 @@ public enum GCompressSyneEnum {
     zip(new GCompressSync(new GCompressZip()));
 
 
-    private GCompressSync compressSync;
+    private GCompressSync instance;
 
     GCompressSyneEnum(GCompressSync compressSync) {
-        this.compressSync = compressSync;
+        this.instance = compressSync;
     }
 
-    public GCompressSync getCompressSync() {
-        return compressSync;
+    public GCompressSync getInstance() {
+        return instance;
     }
 }

@@ -29,4 +29,28 @@ public class GCompressSync {
         }).start();
     }
 
+    public void extract(final String src, final String destination, final CallBack callBack) {
+        new Thread(new Runnable() {
+            public void run() {
+                try {
+                    compress.extract(src, destination);
+                    if (callBack != null) {
+                        callBack.finish();
+
+                    }
+                } catch (ZipException e) {
+                    if (callBack != null) {
+                        callBack.err(e);
+                    }
+                }
+            }
+        }).start();
+    }
+
+    public void extract(final String src, final CallBack callBack) {
+        String[] srcArr = src.split(File.separator);
+        extract(src, src.substring(0, src.indexOf(srcArr[srcArr.length - 1])), callBack);
+    }
+
+
 }

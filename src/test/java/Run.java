@@ -18,7 +18,8 @@ public class Run {
             e.printStackTrace();
         }
     }
- @Test
+
+    @Test
     public void unzip() {
         // new ZipFile("filename.zip").addFolder(new File("/home/sakura/workspace/compress/src/main/resources/cfloder"));
 
@@ -32,7 +33,7 @@ public class Run {
 
     @Test
     public void zipSync() {
-        GCompressSyneEnum.zip.getCompressSync().compressFolder("/home/sakura/workspace/compress/target/out/filename.zip", new File("/home/sakura/workspace/compress/src/main/resources/cfloder"), new CallBack() {
+        GCompressSyneEnum.zip.getInstance().compressFolder("/home/sakura/workspace/compress/target/out/filename.zip", new File("/home/sakura/workspace/compress/src/main/resources/cfloder"), new CallBack() {
             public void finish() {
                 System.out.println("finish");
             }
